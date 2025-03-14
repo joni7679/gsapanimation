@@ -4,16 +4,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gsap animation clone</title>
+    <title>Home - Smoov</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-
+    <!-- <nav class="navbar">
+        <div class="nav-left">
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Produtos</a> <span class="arrow">></span></li>
+                <li><a href="#">Nossas Lojas</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="nav-center">
+            <div class="logo">
+                <span>smoov</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="contact">Contato</a>
+            <div class="language-selector">
+                <img src="brazil-flag.png" alt="Brazil Flag">
+                <span>PT</span>
+                <span class="arrow">></span>
+            </div>
+            <button class="franchise-btn">SEJA UM FRANQUEADO</button>
+        </div>
+    </nav> -->
     <main>
+
         <div class="hero-section">
-            <canvas></canvas>
+            <canvas id="hero-section-canvas"></canvas>
+        </div>
+        <div class="about-section">
+            <div class="about-left-part">
+                <h1>It’s about changing how the health lifestyle is pursued</h1>
+            </div>
+            <div class="about-right-part">
+                <p>It’s about making people’s daily lives easier and putting their health as a priority. It’s being
+                    anyone’s first contact with a healthier and longer life. It’s about being practical and being part
+                    of people’s routine.</p>
+
+                <p>We value nutrition quality as much as flavor, which is by the way the starting point for our recipes.
+                    Our Smoothies are developed and approved by a nutritionist and are 100% natural and functional.</p>
+
+
+                <img src="./assets/images/selo-join-this-smoovment.svg" alt="">
+            </div>
+
+        </div>
+        <div class="menu-section">
+            <canvas id="menu-section-canvas"></canvas>
+
+        </div>
+        <div class="menu-bottom-part">
+            <p>Our Smoothies are made with natural ingredients only such as fruits, yogurt, superfood, and protein. They
+                are 100% natural and functional, made to provide a diet rich in vitamins, fiber and nutrients to supply
+                and improve our body’s nutrition.</p>
+        </div>
+        <div class="products-section">
+            <div class="smoothies-products-part">
+                <div class="smoothies-left-part">
+                    <div class="smoothies_text_inner">
+                        <p>Fruit</p>
+                        <h3>Smoovs</h3>
+                    </div>
+                    <div class="smoothies-bottom-part">
+
+                    </div>
+
+                </div>
+                <div class="smoothies-right-part">
+                    <img src="./assets/images/healthy-shake-1.webp" alt="">
+                    <img src="./assets/images/Smoov-Smoothie-Antiox.webp" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="store-section">
+            <h2>Find a store
+            </h2>
+            <div class="store-cards">
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/IMG_3990-1.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/IMG_2947.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/cards-img-3.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/cards-img-4.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/cards-img-5.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/cards-img-6.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+                <div class="store-card">
+                    <div class="store-card-img">
+                        <img src="./assets/images/IMG_3990-1.webp" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="logo">
+                            <h1>smoov</h1>
+                        </div>
+                        <h4 class="item-title">Gilberto Salomão</h4>
+                        <div class="address">
+                            R. Oscar Freire, 562 - Jardim Paulista, São Paulo
+                        </div>
+                        <a href="#" class="btn">
+                            <i class="ri-corner-up-right-fill"></i> DIRECTIONS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="container">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <h2>CONTACT US</h2>
+                    <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+91 8513011792</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>contato@jonidevsmoovco.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="right-section">
+                    <h2>SEND US A MESSAGE</h2>
+                    <div class="form-group">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Phone Number">
+                    </div>
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <br>
+                    <button class="send-button">SEND</button>
+                </div>
+            </div>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>

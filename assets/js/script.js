@@ -37,10 +37,10 @@ function loco() {
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
 }
-  loco();
+loco();
 
 function canvas() {
-    const canvas = document.querySelector("canvas");
+    const canvas = document.querySelector("#hero-section-canvas");
     const context = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
@@ -158,7 +158,7 @@ https://smoovco.com/wp-content/uploads/2023/11/smoov90-min.jpg
         return data.split("\n")[index];
     }
 
-    const frameCount = 180;
+    const frameCount = 90;
 
     const images = [];
     const imageSeq = {
@@ -179,9 +179,9 @@ https://smoovco.com/wp-content/uploads/2023/11/smoov90-min.jpg
             scrub: 0.15,
             trigger: `.hero-section`,
             start: `top top`,
-            end: `600% top`,
+            end: `200% top`,
             scroller: `main`,
-            
+
         },
         onUpdate: render,
     });
@@ -194,12 +194,14 @@ https://smoovco.com/wp-content/uploads/2023/11/smoov90-min.jpg
 
     function scaleImage(img, ctx) {
         var canvas = ctx.canvas;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         var hRatio = canvas.width / img.width;
         var vRatio = canvas.height / img.height;
-        var ratio = Math.max(hRatio, vRatio);
+        var ratio = Math.min(hRatio, vRatio);
         var centerShift_x = (canvas.width - img.width * ratio) / 2;
         var centerShift_y = (canvas.height - img.height * ratio) / 2;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
         ctx.drawImage(
             img,
             0,
@@ -212,14 +214,242 @@ https://smoovco.com/wp-content/uploads/2023/11/smoov90-min.jpg
             img.height * ratio
         );
     }
+
+
+    function scaleImageToFill(img, ctx) {
+        var canvas = ctx.canvas;
+
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+
+        var ratio = Math.max(hRatio, vRatio);
+
+
+        var newWidth = img.width * ratio;
+        var newHeight = img.height * ratio;
+        var centerShift_x = (canvas.width - newWidth) / 2;
+        var centerShift_y = (canvas.height - newHeight) / 2;
+
+
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            newWidth,
+            newHeight
+        );
+    }
+
     ScrollTrigger.create({
         trigger: ".hero-section",
         pin: true,
-        markers:true,
+        // markers: true,
         scroller: `main`,
-        //   set start end according to preference
         start: `top top`,
-        end: `600% top`,
+        end: `200% top`,
     });
 }
 canvas();
+
+function canvas2() {
+    const canvas = document.querySelector("#menu-section-canvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+    });
+
+    function files(index) {
+        var data = `
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores0-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores1-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores2-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores3-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores4-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores5-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores6-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores7-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores8-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores9-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores10-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores11-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores12-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores13-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores14-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores15-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores16-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores17-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores18-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores19-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores20-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores21-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores22-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores23-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores24-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores25-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores26-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores27-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores28-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores29-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores30-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores31-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores32-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores33-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores34-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores35-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores36-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores37-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores38-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores39-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores40-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores41-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores42-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores43-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores44-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores45-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores46-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores47-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores48-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores49-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores50-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores51-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores52-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores53-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores54-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores55-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores56-min.jpg
+https://smoovco.com/wp-content/uploads/2024/02/en-sabores57-min.jpg
+
+
+   `;
+        return data.split("\n")[index];
+    }
+
+    const frameCount = 57;
+
+    const images = [];
+    const imageSeq = {
+        frame: 1,
+    };
+
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = files(i);
+        images.push(img);
+    }
+
+    gsap.to(imageSeq, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: `none`,
+        scrollTrigger: {
+            scrub: 0.15,
+            trigger: `.menu-section`,
+            start: `top top`,
+            end: `200% top`,
+            scroller: `main`,
+
+        },
+        onUpdate: render,
+    });
+
+    images[1].onload = render;
+
+    function render() {
+        scaleImage(images[imageSeq.frame], context);
+    }
+
+    function scaleImage(img, ctx) {
+        var canvas = ctx.canvas;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+        var ratio = Math.min(hRatio, vRatio);
+        var centerShift_x = (canvas.width - img.width * ratio) / 2;
+        var centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width * ratio,
+            img.height * ratio
+        );
+    }
+
+
+    function scaleImageToFill(img, ctx) {
+        var canvas = ctx.canvas;
+
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+
+        var ratio = Math.max(hRatio, vRatio);
+
+
+        var newWidth = img.width * ratio;
+        var newHeight = img.height * ratio;
+        var centerShift_x = (canvas.width - newWidth) / 2;
+        var centerShift_y = (canvas.height - newHeight) / 2;
+
+
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            newWidth,
+            newHeight
+        );
+    }
+
+    ScrollTrigger.create({
+        trigger: ".menu-section",
+        pin: true,
+        // markers: true,
+        scroller: `main`,
+        start: `top top`,
+        end: `200% top`,
+    });
+}
+canvas2()
+
+let productsPart = document.querySelector(".smoothies-products-part");
+
+
+productsPart.addEventListener("mouseenter", () => {
+    console.log("mouse move");
+
+    console.log(productsPart.childNodes);
+
+
+})
+productsPart.addEventListener("mouseleave", () => {
+    console.log("mouse leave");
+
+})
