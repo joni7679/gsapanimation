@@ -1,6 +1,42 @@
+@media (max-width:950px) {
+    .form-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+}
+
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-newsletter {
+        text-align: center;
+    }
+
+}
+
 @media (max-width:850px) {
-    .about-section{
+
+    .about-section {
         flex-direction: column;
     }
-    
+
+    .container,
+    .banner {
+        flex-direction: column;
+    }
+
+
 }

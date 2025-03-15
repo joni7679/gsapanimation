@@ -439,17 +439,99 @@ https://smoovco.com/wp-content/uploads/2024/02/en-sabores57-min.jpg
 }
 canvas2()
 
-let productsPart = document.querySelector(".smoothies-products-part");
+// text-animation
+function textAnimation(){
+    let text= document.querySelector(".menu-bottom-part p").textContent.split('');
+    let clutter='';
+    console.log(text);
+    text.forEach((val)=>{
+        clutter +=`<span>${val}</span>`
+    });
+    console.log(clutter);
+    document.querySelector(".menu-bottom-part p").innerHTML = clutter;
+    gsap.to(".menu-bottom-part p span", {
+        scrollTrigger: {
+            trigger: `.menu-bottom-part p`,
+            start: `top 90%`,
+            end: `bottom 20%`,
+            scroller: `main`,
+            scrub: .5,
+            // markers: true,
+        },
+        stagger: .2,
+        color: `#8B5A2B`
+    });
+    
+}
+textAnimation()
+function storeCardSilder() {
+    $('.store-cards').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 800,
+        pauseOnHover: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+}
 
+storeCardSilder();
 
-productsPart.addEventListener("mouseenter", () => {
-    console.log("mouse move");
+function footerImg(){
 
-    console.log(productsPart.childNodes);
+}
+gsap.to(".ft-img", {
+    // scale: 1.5,
+    x: 900,
+    // rotationY: 180, 
+    scrollTrigger: {
+        trigger: "footer",
+        start: "top 90%",
+        end: "bottom 10%",
+        scrub: true,
+        scroller: "main",
+        // markers: true,
 
+    }
 
 })
-productsPart.addEventListener("mouseleave", () => {
-    console.log("mouse leave");
 
-})
+
+
+
+
+
+
+

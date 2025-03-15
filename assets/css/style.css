@@ -101,8 +101,31 @@ body {
     background-color: #ffeb3b;
 }
 
+@font-face {
+    font-family: 'Rubik';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE3U5f4c.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYiFWUUw.ttf) format('truetype');
+}
+
+
+
 main {
     width: 100%;
+    background-color: var(--primary-color);
+}
+
+.p-5 {
+    padding: 20px;
 }
 
 .hero-section {
@@ -144,8 +167,6 @@ canvas {
 }
 
 .about-right-part img {
-    /* position: absolute;
-    top: 130%; */
     margin-top: 20px;
 }
 
@@ -176,48 +197,210 @@ canvas {
 .products-section {
     width: 100%;
     padding: 30px;
-    height: 100vh;
     background-color: var(--primary-color);
 
 }
 
-.smoothies_text_inner p {
-    font-size: 2.5rem;
+.content {
+    position: relative;
+    z-index: 2;
 }
 
-.smoothies_text_inner h3 {
-    color: var(--primary-text-color);
-    font-size: 3rem;
+h2 {
+    font-size: 48px;
+    color: #5c4c3d;
 }
 
-.smoothies-products-part {
+h2 span {
+    font-weight: 400;
+    color: #2d2b2a;
+}
+
+.banner-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 20px;
-}
-
-.smoothies-products-part .smoothies-left-part {
-    width: 50%;
 
 }
 
-.smoothies-products-part .smoothies-right-part {
+/* Vertical sidebar with 'W.' */
+.sidebar {
+    width: 50px;
+    background-color: black;
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Banner content with two sections */
+.banner {
+    display: flex;
+    flex: 1;
+    margin-top: 80px;
+    height: 60vh;
+}
+
+/* Left and right sections */
+.left-section,
+.right-section {
+    flex: 1;
     position: relative;
-    width: 50%;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.smoothies-products-part .smoothies-right-part img {
-    width: 500px;
+/* Container for text and fruits */
+.text-fruits-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Main text styling */
+.text {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.smoothies {
+    font-weight: 700;
+    /* Bold */
+    font-size: 60px;
+    color: #1A3C34;
+    /* Dark teal */
+}
+
+.frutados {
+    font-weight: 500;
+    /* Medium */
+    font-size: 70px;
+    color: #8B5A2B;
+    /* Warm brown */
+}
+
+/* Button styling */
+.options-button,
+.btn {
+    background-color: #FFC107;
+    /* Bright yellow */
+    color: #FFFFFF;
+    /* White text */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* General fruit styling */
+.fruit {
+    width: 90px;
     position: absolute;
-    transition: all 0.5s;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    /* Realistic shadow */
 }
+
+/* Fruit positions in left section (approximated) */
+.blackberry {
+    top: 140px;
+    left: 13px;
+    /* width: 30px; */
+}
+
+.strawberry1 {
+    top: -12px;
+    left: 385px;
+    /* width: 40px; */
+}
+
+.passionfruit {
+    top: -84px;
+    left: -2px;
+    /* width: 35px; */
+}
+
+.banana {
+    top: 30px;
+    left: -76px;
+}
+
+.blueberry1 {
+    top: -88px;
+    left: 176px;
+
+    /* width: 20px; */
+}
+
+.strawberry2 {
+
+    bottom: -122px;
+    left: 91px;
+    /* width: 40px; */
+}
+
+.mango1 {
+    bottom: -81px;
+    left: 390px;
+    /* width: 50px; */
+}
+
+.blueberry2 {
+    bottom: 30px;
+    right: 10px;
+    /* width: 20px; */
+}
+
+.cup-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Smoothie cup container */
+.cup-container img {
+    position: absolute;
+}
+
+.smoothie-cup {
+    width: 400px;
+    position: absolute;
+}
+
+/* Fruits around the cup */
+.mango2 {
+    bottom: -20px;
+    left: -30px;
+    width: 50px;
+}
+
+.blueberry3 {
+    bottom: -10px;
+    right: -20px;
+    width: 20px;
+}
+
 
 .store-section {
     width: 100%;
     /* height: 100vh; */
     background-color: #2E3A45;
+    margin-top: 57px;
     padding: 30px;
 
 }
@@ -236,6 +419,7 @@ canvas {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: center;
+    margin-right: 20px;
 }
 
 .store-card-img {
@@ -251,9 +435,18 @@ canvas {
 
 .card-content {
     padding: 20px;
+    width: 100%;
+    height: 300px;
+    text-align:center;
+    position: relative;
 }
 
+.btn2 {
+    position: absolute;
+    bottom: 17px;
+    left: 30%;
 
+}
 
 .title {
     font-size: 22px;
@@ -268,36 +461,14 @@ canvas {
     line-height: 1.5;
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    background-color: #e5df00;
-    color: #1d2a38;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    margin-top: 100px;
-}
-
-.btn i {
-    margin-right: 8px;
-}
-
-.btn:hover {
-    background-color: #d4cb00;
-}
 
 .contact-section {
     background-color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Rubik';
+
 }
 
 .container {
@@ -311,10 +482,15 @@ canvas {
 .right-section {
     flex: 1;
     padding: 20px;
+    position: relative;
 }
 
-.left-section {
-    border-right: 2px solid #ccc;
+.three-smoothie-cup {
+    right: 49%;
+}
+
+.two-smoothie-cup {
+    left: 19%;
 }
 
 h2 {
@@ -369,6 +545,7 @@ textarea {
     border: 1px solid #ddd;
     font-size: 16px;
     outline: none;
+    margin-top: 20px;
 }
 
 textarea {
@@ -385,3 +562,104 @@ textarea {
     cursor: pointer;
     border-radius: 25px;
 }
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #2E3A45;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Left Section */
+.footer-logo h2 {
+    font-family: cursive;
+    font-size: 28px;
+    color: #e3c5a8;
+}
+
+/* Center Links */
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-column h3 {
+    color: #e3c5a8;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-column a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Newsletter Section */
+.footer-newsletter p {
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.email-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e3c5a8;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.email-box input {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.email-box button {
+    background: none;
+    border: none;
+    color: #e3c5a8;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.email-box button:hover {
+    color: #fff;
+}
+
+.ft-img {
+    width: 350px;
+    position: absolute;
+
+}
+
+/* products */
