@@ -1,3 +1,50 @@
+(function () {
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+    document.addEventListener("keydown", (event) => {
+        // Block Developer Tools, View Source, and Save Page
+        if (
+            event.ctrlKey &&
+            ["u", "s", "h", "j", "i", "c"].includes(event.key.toLowerCase()) ||
+            event.key === "F12" ||
+            (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key))
+        ) {
+            event.preventDefault();
+        }
+    });
+
+    // Block Dragging Content
+    document.addEventListener("dragstart", (event) => event.preventDefault());
+
+})()
+
+function navbarAnimation() {
+    let navbar = document.querySelector(".navbar");
+    let lastScroll = 0;
+
+    window.addEventListener("wheel", (dets) => {
+        if (dets.deltaY > 0) {
+
+            gsap.to(navbar, {
+                duration: 0.5,
+                y: -100,
+                ease: "power2.out"
+            });
+        } else {
+
+            gsap.to(navbar, {
+                duration: 0.5,
+                y: 0,
+                ease: "power2.out"
+            });
+        }
+    });
+}
+
+navbarAnimation();
+
+
+
 function loco() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -509,6 +556,16 @@ function storeCardSilder() {
 
 storeCardSilder();
 
+function floating() {
+    gsap.to(".floating", {
+        y: "+=20",
+        repeat: -1,
+        yoyo: true,
+        duration: 2,
+        ease: "power1.inOut"
+    });
+}
+
 function footerImg() {
 
 }
@@ -546,12 +603,22 @@ console.log("allimages", allImages);
 document.querySelectorAll(".banner-container").forEach((banner) => {
     banner.addEventListener("mouseenter", () => {
         // Left section er images modify
-        banner.querySelectorAll(".left-section .fruit").forEach((img,index) => {
-           
+        banner.querySelectorAll(".left-section .fruit").forEach((img, index) => {
+
         });
 
         // Right section er smoothie cups modify
         banner.querySelectorAll(".right-section .smoothie-cup").forEach((img, index) => {
+            console.log(img, index);
+            if (index === 0) {
+                img.classList.add("active-two-smoothie-cup")
+            }
+            if (index === 1) {
+                img.classList.add("active-three-smoothie-cup")
+            }
+
+        });
+        banner.querySelectorAll(".left-section .smoothie-cup").forEach((img, index) => {
             console.log(img, index);
             if (index === 0) {
                 img.classList.add("active-two-smoothie-cup")
@@ -578,6 +645,16 @@ document.querySelectorAll(".banner-container").forEach((banner) => {
             if (index === 1) {
                 img.classList.remove("active-three-smoothie-cup")
             }
+        });
+        banner.querySelectorAll(".left-section .smoothie-cup").forEach((img, index) => {
+            console.log(img, index);
+            if (index === 0) {
+                img.classList.remove("active-two-smoothie-cup")
+            }
+            if (index === 1) {
+                img.classList.remove("active-three-smoothie-cup")
+            }
+
         });
     });
 });
