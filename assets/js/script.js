@@ -440,12 +440,12 @@ https://smoovco.com/wp-content/uploads/2024/02/en-sabores57-min.jpg
 canvas2()
 
 // text-animation
-function textAnimation(){
-    let text= document.querySelector(".menu-bottom-part p").textContent.split('');
-    let clutter='';
+function textAnimation() {
+    let text = document.querySelector(".menu-bottom-part p").textContent.split('');
+    let clutter = '';
     console.log(text);
-    text.forEach((val)=>{
-        clutter +=`<span>${val}</span>`
+    text.forEach((val) => {
+        clutter += `<span>${val}</span>`
     });
     console.log(clutter);
     document.querySelector(".menu-bottom-part p").innerHTML = clutter;
@@ -461,7 +461,7 @@ function textAnimation(){
         stagger: .2,
         color: `#8B5A2B`
     });
-    
+
 }
 textAnimation()
 function storeCardSilder() {
@@ -509,17 +509,17 @@ function storeCardSilder() {
 
 storeCardSilder();
 
-function footerImg(){
+function footerImg() {
 
 }
 gsap.to(".ft-img", {
     // scale: 1.5,
-    x: 900,
+    y: 900,
     // rotationY: 180, 
     scrollTrigger: {
         trigger: "footer",
         start: "top 90%",
-        end: "bottom 10%",
+        end: "bottom 20%",
         scrub: true,
         scroller: "main",
         // markers: true,
@@ -528,10 +528,58 @@ gsap.to(".ft-img", {
 
 })
 
+// products section animation
+// Selecting only the main parent div
+const banner = document.querySelector('.banner');
+
+// Accessing left and right sections
+const leftSection = document.querySelector('.left-section');
+const rightSection = document.querySelector('.right-section');
+
+// Selecting all images inside the banner
+const allImages = banner.querySelectorAll('img');
+console.log("left-section", leftSection, "rightsection", rightSection);
+console.log("allimages", allImages);
 
 
 
+document.querySelectorAll(".banner-container").forEach((banner) => {
+    banner.addEventListener("mouseenter", () => {
+        // Left section er images modify
+        banner.querySelectorAll(".left-section .fruit").forEach((img,index) => {
+           
+        });
 
+        // Right section er smoothie cups modify
+        banner.querySelectorAll(".right-section .smoothie-cup").forEach((img, index) => {
+            console.log(img, index);
+            if (index === 0) {
+                img.classList.add("active-two-smoothie-cup")
+            }
+            if (index === 1) {
+                img.classList.add("active-three-smoothie-cup")
+            }
 
+        });
+    });
+
+    banner.addEventListener("mouseleave", () => {
+        // Left section reset
+        banner.querySelectorAll(".left-section .fruit").forEach(img => {
+
+        });
+
+        // Right section reset
+        banner.querySelectorAll(".right-section .smoothie-cup").forEach((img, index) => {
+            console.log(img, index);
+            if (index === 0) {
+                img.classList.remove("active-two-smoothie-cup")
+            }
+            if (index === 1) {
+                img.classList.remove("active-three-smoothie-cup")
+            }
+        });
+    });
+});
 
 

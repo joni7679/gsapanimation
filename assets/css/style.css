@@ -241,9 +241,8 @@ h2 span {
 /* Banner content with two sections */
 .banner {
     display: flex;
-    flex: 1;
-    margin-top: 80px;
-    height: 60vh;
+    gap: 4vw;
+    height: 90vh;
 }
 
 /* Left and right sections */
@@ -255,9 +254,11 @@ h2 span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 40vw;
     height: 100%;
+
 }
+
 
 /* Container for text and fruits */
 .text-fruits-container {
@@ -274,7 +275,7 @@ h2 span {
 .smoothies {
     font-weight: 700;
     /* Bold */
-    font-size: 60px;
+    font-size: 6vw;
     color: #1A3C34;
     /* Dark teal */
 }
@@ -282,7 +283,7 @@ h2 span {
 .frutados {
     font-weight: 500;
     /* Medium */
-    font-size: 70px;
+    font-size: 7vw;
     color: #8B5A2B;
     /* Warm brown */
 }
@@ -309,7 +310,7 @@ h2 span {
 
 /* General fruit styling */
 .fruit {
-    width: 90px;
+    width: 9vw;
     position: absolute;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     /* Realistic shadow */
@@ -378,7 +379,7 @@ h2 span {
 }
 
 .smoothie-cup {
-    width: 400px;
+    width: 32vw;
     position: absolute;
 }
 
@@ -393,6 +394,31 @@ h2 span {
     bottom: -10px;
     right: -20px;
     width: 20px;
+}
+
+.three-smoothie-cup {
+    right: 27%;
+    opacity: 0;
+    transition: all 0.5s;
+
+}
+
+.active-three-smoothie-cup {
+    right: 49%;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.two-smoothie-cup {
+    left: 0%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.active-two-smoothie-cup {
+    left: 20%;
+    opacity: 1;
+    transition: all 0.5s;
 }
 
 
@@ -437,7 +463,7 @@ h2 span {
     padding: 20px;
     width: 100%;
     height: 300px;
-    text-align:center;
+    text-align: center;
     position: relative;
 }
 
@@ -478,20 +504,15 @@ h2 span {
     padding: 20px;
 }
 
-.left-section,
+/* .left-section,
 .right-section {
     flex: 1;
     padding: 20px;
     position: relative;
-}
+    width: 40vw;
+} */
 
-.three-smoothie-cup {
-    right: 49%;
-}
 
-.two-smoothie-cup {
-    left: 19%;
-}
 
 h2 {
     color: #1d2a38;
